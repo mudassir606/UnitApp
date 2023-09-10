@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">UnitApp</string>
+
+    <string-array name="length_units">
+        <item> Meter</item>
+        <item> Kilometer</item>
+        <item> Centimeter</item>
+        <item> Millimeter</item>
+        <item> Micrometer</item>
+        <item> Nanometer</item>
+        <item> Mile</item>
+        <item> Yard</item>
+        <item> Foot</item>
+        <item> Inch</item>
+        <item> Light Year</item>
+    </string-array>
+
+    <string-array name="time_units">
+        <item> Second</item>
+        <item> Millisecond</item>
+        <item> Microsecond</item>
+        <item> Nanosecond</item>
+        <item> Picosecond</item>
+        <item> Minute</item>
+        <item> Hour</item>
+        <item> Day</item>
+        <item> Week</item>
+        <item> Month</item>
+        <item> Year</item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item> Kilogram</item>
+        <item> Gram</item>
+        <item> Milligram</item>
+        <item> Pound</item>
+        <item> Ounce</item>
+        <item> Carat</item>
+    </string-array>
+
+</resources>
