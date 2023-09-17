@@ -44,4 +44,18 @@
         <item> Fahrenheit</item>
     </string-array>
 
+    <string-array name="area_units">
+        <item> Sqr Meter</item>
+        <item> Sqr Kilometer</item>
+        <item> Sqr Centimeter</item>
+        <item> Sqr Millimeter</item>
+        <item> Sqr Micrometer</item>
+        <item> Hectare</item>
+        <item> Sqr Mile</item>
+        <item> Sqr Yard</item>
+        <item> Sqr Foot</item>
+        <item> Sqr Inch</item>
+        <item> Acre</item>
+    </string-array>
+
 </resources>

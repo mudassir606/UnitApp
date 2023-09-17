@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         cardarea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, AreaActivity.class));
             }
         });
 
@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         cardlength.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Start the LengthActivity when the button is clicked
                 startActivity(new Intent(MainActivity.this, LengthActivity.class));
             }
         });
