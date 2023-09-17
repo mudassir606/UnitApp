@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView cardlength, cardtime, cardweight, cardarea, cardcurrency, carddata, cardmile, cardpower, cardpressure, cardspeed, cardtemperature, cardvolume;
+    CardView cardlength, cardtime, cardweight, cardarea, cardcurrency, cardfriend, cardbmi, cardage, cardpressure, cardspeed, cardtemperature, cardvolume;
 
 
     @Override
@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
         cardarea = findViewById(R.id.card1);
         cardcurrency = findViewById(R.id.card2);
-        carddata = findViewById(R.id.card3);
-        cardmile = findViewById(R.id.card4);
+        cardfriend = findViewById(R.id.card3);
+        cardbmi = findViewById(R.id.card4);
         cardlength = findViewById(R.id.card5);
-        cardpower = findViewById(R.id.card6);
+        cardage = findViewById(R.id.card6);
         cardpressure = findViewById(R.id.card7);
         cardspeed = findViewById(R.id.card8);
         cardtemperature = findViewById(R.id.card9);
@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        carddata.setOnClickListener(new View.OnClickListener() {
+        cardfriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
             }
         });
 
-        cardmile.setOnClickListener(new View.OnClickListener() {
+        cardbmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cardpower.setOnClickListener(new View.OnClickListener() {
+        cardage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         cardtemperature.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, TempActivity.class);
+                startActivity(intent);
             }
         });
 

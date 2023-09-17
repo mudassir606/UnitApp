@@ -2,7 +2,6 @@ package com.example.unitapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,64 +11,52 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class LengthActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class TempActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner spinner1,spinner2;
     EditText editTextValue;
     TextView textViewResult;
 
-
+    // Conversion factors for temperature units
     private static final double[] conversionFactors = {
-            1.0,          // Meter
-            1000.0,       // Kilometer
-            0.01,         // Centimeter
-            0.001,        // Millimeter
-            1e-6,         // Micrometer
-            1e-9,         // Nanometer
-            1609.34,      // Mile
-            0.9144,       // Yard
-            0.3048,       // Foot
-            0.0254,       // Inch
-            9.461e15      // Light Year
+            1.0,         // Celsius to Celsius
+            33.8,        // Celsius to Fahrenheit
+            274.15,      // Celsius to Kelvin
+            -17.2222,    // Fahrenheit to Celsius
+            1.0,         // Fahrenheit to Fahrenheit
+            255.928,     // Fahrenheit to Kelvin
+            -272.15,     // Kelvin to Celsius
+            -457.87,     // Kelvin to Fahrenheit
+            1.0          // Kelvin to Kelvin
     };
 
     private static final String[] unitNames = {
-            "Meter",
-            "Kilometer",
-            "Centimeter",
-            "Millimeter",
-            "Micrometer",
-            "Nanometer",
-            "Mile",
-            "Yard",
-            "Foot",
-            "Inch",
-            "Light Year"
+            "Celsius",
+            "Fahrenheit",
+            "Kelvin"
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_length);
+        setContentView(R.layout.activity_temp);
 
-         spinner1 = findViewById(R.id.spinner1);
-         spinner2 = findViewById(R.id.spinner2);
-         editTextValue = findViewById(R.id.number1);
+        spinner1 = findViewById(R.id.spinner1);
+        spinner2 = findViewById(R.id.spinner2);
+        editTextValue = findViewById(R.id.number1);
         textViewResult = findViewById(R.id.number2);
 
-        ArrayAdapter <CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.length_units, R.layout.spinner1_text);
-         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-         spinner1.setAdapter(adapter1);
-         spinner1.setOnItemSelectedListener(this);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.temp_units, R.layout.spinner1_text);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter1);
+        spinner1.setOnItemSelectedListener(this);
 
 
-        ArrayAdapter <CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.length_units, R.layout.spinner2_text);
+        ArrayAdapter <CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.temp_units, R.layout.spinner2_text);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(this);
-
 
         editTextValue.addTextChangedListener(new TextWatcher() {
             @Override
@@ -87,7 +74,6 @@ public class LengthActivity extends AppCompatActivity implements AdapterView.OnI
                 // Do nothing
             }
         });
-
     }
 
     private void convertAndDisplayResult() {
@@ -105,18 +91,41 @@ public class LengthActivity extends AppCompatActivity implements AdapterView.OnI
             double inputValue = Double.parseDouble(inputValueStr);
 
             // Get the selected units from the spinners
-            String initialUnit = spinner2.getSelectedItem().toString();
-            String finalUnit = spinner1.getSelectedItem().toString();
+            String initialUnit = spinner1.getSelectedItem().toString();
+            String finalUnit = spinner2.getSelectedItem().toString();
 
             // Find the indices of the selected units
             int initialUnitIndex = findUnitIndex(initialUnit);
             int finalUnitIndex = findUnitIndex(finalUnit);
 
             // Perform the unit conversion based on your logic
-            double result = inputValue * (conversionFactors[finalUnitIndex] / conversionFactors[initialUnitIndex]);
+            double result = 0.0;
+
+            if (initialUnitIndex == finalUnitIndex) {
+                // If the initial and final units are the same, the result is the same as the input
+                result = inputValue;
+            } else if (initialUnitIndex == 0 && finalUnitIndex == 1) {
+                // Celsius to Fahrenheit
+                result = (inputValue * 9.0 / 5.0) + 32.0;
+            } else if (initialUnitIndex == 0 && finalUnitIndex == 2) {
+                // Celsius to Kelvin
+                result = inputValue + 273.15;
+            } else if (initialUnitIndex == 1 && finalUnitIndex == 0) {
+                // Fahrenheit to Celsius
+                result = (inputValue - 32.0) * 5.0 / 9.0;
+            } else if (initialUnitIndex == 1 && finalUnitIndex == 2) {
+                // Fahrenheit to Kelvin
+                result = (inputValue + 459.67) * 5.0 / 9.0;
+            } else if (initialUnitIndex == 2 && finalUnitIndex == 0) {
+                // Kelvin to Celsius
+                result = inputValue - 273.15;
+            } else if (initialUnitIndex == 2 && finalUnitIndex == 1) {
+                // Kelvin to Fahrenheit
+                result = (inputValue * 9.0 / 5.0) - 459.67;
+            }
 
             // Display the result in the textViewResult
-            textViewResult.setText(String.format("%.4f", result));
+            textViewResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException e) {
             // Handle invalid input format
             textViewResult.setText("Invalid input");
@@ -131,7 +140,6 @@ public class LengthActivity extends AppCompatActivity implements AdapterView.OnI
         }
         return -1; // Unit not found
     }
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {

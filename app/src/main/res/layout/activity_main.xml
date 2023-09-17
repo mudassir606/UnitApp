@@ -64,8 +64,8 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:src="@drawable/area"
                     android:alpha="0.3"
                     app:layout_constraintBottom_toTopOf="@+id/textView"
@@ -105,8 +105,8 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:alpha="0.3"
                     android:src="@drawable/currency"
                     app:layout_constraintBottom_toTopOf="@+id/text2"
@@ -146,10 +146,10 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:alpha="0.3"
-                    android:src="@drawable/data"
+                    android:src="@drawable/friendship"
                     app:layout_constraintBottom_toTopOf="@+id/text3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -162,7 +162,7 @@
                     android:alpha="0.3"
                     android:layout_marginBottom="10dp"
                     android:textColor="#8c8c8c"
-                    android:text="Data"
+                    android:text="Friendship"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -192,10 +192,10 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:alpha="0.3"
-                android:src="@drawable/mile"
+                android:src="@drawable/bmi"
                 app:layout_constraintBottom_toTopOf="@+id/text4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -208,7 +208,7 @@
                 android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
-                android:text="Mileage"
+                android:text="BMI"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -235,8 +235,8 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:src="@drawable/length"
                 app:layout_constraintBottom_toTopOf="@+id/text5"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -276,10 +276,10 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:alpha="0.3"
-                android:src="@drawable/power"
+                android:src="@drawable/age"
                 app:layout_constraintBottom_toTopOf="@+id/text6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -292,7 +292,7 @@
                 android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
-                android:text="Power"
+                android:text="Age"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -300,7 +300,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card7"
@@ -323,7 +322,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:alpha="0.3"
-                android:src="@drawable/resilience"
+                android:src="@drawable/time_zone"
                 app:layout_constraintBottom_toTopOf="@+id/text7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -336,7 +335,7 @@
                 android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
-                android:text="Pressure"
+                android:text="Time Zone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -408,7 +407,6 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:alpha="0.3"
                 android:src="@drawable/temperature"
                 app:layout_constraintBottom_toTopOf="@+id/text9"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -419,7 +417,6 @@
                 android:id="@+id/text9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
                 android:text="Temperature"
@@ -431,7 +428,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card10"
