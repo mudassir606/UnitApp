@@ -75,7 +75,16 @@
         <item> Pakistan</item>
         <item> Belgium</item>
         <item> USA</item>
-        
+    </string-array>
+
+    <string-array name="currency_units">
+        <item> USD</item>
+        <item> EUR</item>
+        <item> GBP</item>
+        <item> JPY</item>
+        <item> CAD</item>
+        <item> PKR</item>
+        <item> INR</item>
     </string-array>
 
 </resources>

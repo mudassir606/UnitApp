@@ -41,14 +41,14 @@ public class MainActivity extends AppCompatActivity {
         cardcurrency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, CurrencyActivity.class));
             }
         });
 
         cardfriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, FriendActivity.class));
             }
         });
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         cardage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, AgeActivity.class));
             }
         });
 

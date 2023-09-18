@@ -105,7 +105,6 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:alpha="0.3"
                     android:src="@drawable/currency"
                     app:layout_constraintBottom_toTopOf="@+id/text2"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -116,7 +115,6 @@
                     android:id="@+id/text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:alpha="0.3"
                     android:layout_marginBottom="10dp"
                     android:textColor="#8c8c8c"
                     android:text="Currency"
@@ -146,7 +144,6 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:alpha="0.3"
                     android:src="@drawable/friendship"
                     app:layout_constraintBottom_toTopOf="@+id/text3"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -157,7 +154,6 @@
                     android:id="@+id/text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:alpha="0.3"
                     android:layout_marginBottom="10dp"
                     android:textColor="#8c8c8c"
                     android:text="Friendship"
@@ -276,7 +272,6 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:alpha="0.3"
                 android:src="@drawable/age"
                 app:layout_constraintBottom_toTopOf="@+id/text6"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -287,7 +282,6 @@
                 android:id="@+id/text6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
                 android:text="Age"

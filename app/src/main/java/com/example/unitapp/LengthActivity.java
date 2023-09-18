@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class LengthActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
