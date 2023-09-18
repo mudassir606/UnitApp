@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView cardlength, cardtime, cardweight, cardarea, cardcurrency, cardfriend, cardbmi, cardage, cardpressure, cardspeed, cardtemperature, cardvolume;
+    CardView cardlength, cardtime, cardweight, cardarea, cardcurrency, cardfriend, cardbmi, cardage, cardtimezone, cardspeed, cardtemperature, cardvolume;
 
 
     @Override
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         cardbmi = findViewById(R.id.card4);
         cardlength = findViewById(R.id.card5);
         cardage = findViewById(R.id.card6);
-        cardpressure = findViewById(R.id.card7);
+        cardtimezone = findViewById(R.id.card7);
         cardspeed = findViewById(R.id.card8);
         cardtemperature = findViewById(R.id.card9);
         cardtime = findViewById(R.id.card10);
@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cardpressure.setOnClickListener(new View.OnClickListener() {
+        cardtimezone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, TimeZoneActivity.class));
             }
         });
 
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         cardvolume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Coming Soon!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, VolumeActivity.class));
             }
         });
 

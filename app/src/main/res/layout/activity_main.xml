@@ -319,7 +319,6 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:alpha="0.3"
                 android:src="@drawable/time_zone"
                 app:layout_constraintBottom_toTopOf="@+id/text7"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -330,7 +329,6 @@
                 android:id="@+id/text7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
                 android:text="Time Zone"
@@ -488,7 +486,6 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:alpha="0.3"
                 android:src="@drawable/volume"
                 app:layout_constraintBottom_toTopOf="@+id/text11"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -499,7 +496,6 @@
                 android:id="@+id/text11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:alpha="0.3"
                 android:layout_marginBottom="10dp"
                 android:textColor="#8c8c8c"
                 android:text="Volume"

@@ -58,4 +58,24 @@
         <item> Acre</item>
     </string-array>
 
+    <string-array name="volume_units">
+        <item> Cub Meter</item>
+        <item> Cub Kilometer</item>
+        <item> Cub Centimeter</item>
+        <item> Cub Millimeter</item>
+        <item> Liter</item>
+        <item> Milliliter</item>
+        <item> Cub Mile</item>
+        <item> Cub Yard</item>
+        <item> Cub Foot</item>
+        <item> Cub Inch</item>
+    </string-array>
+
+    <string-array name="time_zone_units">
+        <item> Pakistan</item>
+        <item> Belgium</item>
+        <item> USA</item>
+        
+    </string-array>
+
 </resources>

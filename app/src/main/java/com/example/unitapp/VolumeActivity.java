@@ -2,6 +2,7 @@ package com.example.unitapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,60 +12,58 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class LengthActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class VolumeActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner spinner1,spinner2;
     EditText editTextValue;
     TextView textViewResult;
 
-
+    // Conversion factors for volume units (in cubic meters)
     private static final double[] conversionFactors = {
-            1.0,          // Meter
-            1000.0,       // Kilometer
-            0.01,         // Centimeter
-            0.001,        // Millimeter
-            1e-6,         // Micrometer
-            1e-9,         // Nanometer
-            1609.34,      // Mile
-            0.9144,       // Yard
-            0.3048,       // Foot
-            0.0254,       // Inch
-            9.461e15      // Light Year
+            1.0,          // Cubic Meter to Cubic Meter
+            1.0e9,        // Cubic Meter to Cubic Kilometer
+            1.0e6,        // Cubic Meter to Cubic Centimeter
+            1.0e3,        // Cubic Meter to Cubic Millimeter
+            1000.0,       // Cubic Meter to Liter
+            1.0e6,        // Cubic Meter to Milliliter
+            4.1682e-13,   // Cubic Meter to Cubic Mile
+            1.30795,      // Cubic Meter to Cubic Yard
+            35.3147,      // Cubic Meter to Cubic Foot
+            61023.7       // Cubic Meter to Cubic Inch
     };
 
     private static final String[] unitNames = {
-            "Meter",
-            "Kilometer",
-            "Centimeter",
-            "Millimeter",
-            "Micrometer",
-            "Nanometer",
-            "Mile",
-            "Yard",
-            "Foot",
-            "Inch",
-            "Light Year"
+            "Cub Meter",
+            "Cub Kilometer",
+            "Cub Centimeter",
+            "Cub Millimeter",
+            "Liter",
+            "Milliliter",
+            "Cub Mile",
+            "Cub Yard",
+            "Cub Foot",
+            "Cub Inch"
     };
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_length);
+        setContentView(R.layout.activity_volume);
 
-         spinner1 = findViewById(R.id.spinner1);
-         spinner2 = findViewById(R.id.spinner2);
-         editTextValue = findViewById(R.id.number1);
-         textViewResult = findViewById(R.id.number2);
+        spinner1 = findViewById(R.id.spinner1);
+        spinner2 = findViewById(R.id.spinner2);
+        editTextValue = findViewById(R.id.number1);
+        textViewResult = findViewById(R.id.number2);
 
-        ArrayAdapter <CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.length_units, R.layout.spinner1_text);
-         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-         spinner1.setAdapter(adapter1);
-         spinner1.setOnItemSelectedListener(this);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.volume_units, R.layout.spinner1_text);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter1);
+        spinner1.setOnItemSelectedListener(this);
 
 
-        ArrayAdapter <CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.length_units, R.layout.spinner2_text);
+        ArrayAdapter <CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.volume_units, R.layout.spinner2_text);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(this);
@@ -86,7 +85,6 @@ public class LengthActivity extends AppCompatActivity implements AdapterView.OnI
                 // Do nothing
             }
         });
-
     }
 
     private void convertAndDisplayResult() {
@@ -112,10 +110,10 @@ public class LengthActivity extends AppCompatActivity implements AdapterView.OnI
             int finalUnitIndex = findUnitIndex(finalUnit);
 
             // Perform the unit conversion based on your logic
-            double result = inputValue * (conversionFactors[finalUnitIndex] / conversionFactors[initialUnitIndex]);
+            double result = inputValue * (conversionFactors[initialUnitIndex] / conversionFactors[finalUnitIndex]);
 
             // Display the result in the textViewResult
-            textViewResult.setText(String.format("%.4f", result));
+            textViewResult.setText(String.format("%.2f", result));
         } catch (NumberFormatException e) {
             // Handle invalid input format
             textViewResult.setText("Invalid input");
